@@ -55,7 +55,7 @@ def plot_test_result(input, target, gen_image, epoch, training=True, save=False,
     imgs = [input, gen_image, target]
     for ax, img in zip(axes.flatten(), imgs):
         ax.axis('off')
-        ax.set_adjustable('box-forced')
+        ax.set_adjustable('box')
         # Scale to 0-255
         img = (((img[0] - img[0].min()) * 255) / (img[0].max() - img[0].min())).numpy().transpose(1, 2, 0).astype(np.uint8)
         ax.imshow(img, cmap=None, aspect='equal')
